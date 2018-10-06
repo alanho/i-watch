@@ -1,15 +1,20 @@
 {
   "name": "i-watch",
   "version": "0.1.0",
+  "author": {
+    "name": "Alan Ho",
+    "email": "alanho@gmail.com"
+  },
   "private": true,
   "dependencies": {
     "cross-fetch": "^2.2.2",
     "deepmerge": "^2.1.1",
+    "gh-pages": "^2.0.0",
     "lodash": "^4.17.11",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
-    "react-scripts": "1.1.5",
+    "react-scripts": "2.0.3",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
@@ -20,11 +25,19 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "eslint": "^5.6.1"
-  }
+    "babel-preset-env": "^1.7.0"
+  },
+  "homepage": "https://alanho.github.io/i-watch",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
