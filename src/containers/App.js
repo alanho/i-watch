@@ -10,8 +10,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onActivate: () => {
-    _.chunk(ALL_PART_NUMBERS, 6).forEach((partNumbers) => {
-      dispatch(fetchAvailability(partNumbers));
+    _.each(ALL_PART_NUMBERS, (productPartNumbers, product) => {
+      _.chunk(productPartNumbers, 6).forEach((partNumbers) => {
+        dispatch(fetchAvailability(product, partNumbers));
+      })
     })
   }
 })

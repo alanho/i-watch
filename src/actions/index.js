@@ -2,10 +2,10 @@ import * as types from '../constants/ActionTypes'
 import fetch from 'cross-fetch'
 
 export const fetchBegin = () => ({ type: types.FETCH_BEGIN })
-export const fetchSuccess = (data) => ({ type: types.FETCH_SUCCESS, data })
+export const fetchSuccess = (product, data) => ({ type: types.FETCH_SUCCESS, product, data })
 export const fetchFailure = (err) => ({ type: types.FETCH_FAILURE, err })
 
-export function fetchAvailability (partNumbers) {
+export function fetchAvailability (product, partNumbers) {
   return dispatch => {
     dispatch(fetchBegin())
     const params = partNumbers
@@ -13,11 +13,11 @@ export function fetchAvailability (partNumbers) {
       .join('&')
 
     return fetch(
-      `https://cors-anywhere.herokuapp.com/https://www.apple.com/hk/shop/retail/pickup-message?location=Central&${params}`
+      `https://cors-anywhere.herokuapp.com/https://www.apple.com/hk/shop/retail/pickup-message?location=Central&${params}&pl=true`
     )
       .then(response => response.json())
       .then(json => json.body)
-      .then(json => dispatch(fetchSuccess(json)))
+      .then(json => dispatch(fetchSuccess(product, json)))
   }
 }
 

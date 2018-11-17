@@ -25,7 +25,7 @@ const PartRow = ({ model, shopKeys, sizes }) =>
                   <Table.Cell rowSpan={Object.keys(connectivities).length}>{size}</Table.Cell>
                 }
                 <Table.Cell>{connectivity}</Table.Cell>
-                <Table.Cell>{parts.partNumber}</Table.Cell>
+                <Table.Cell>{parts.partNumber || parts.connectivity}</Table.Cell>
 
                 {
                   shopKeys.map((shopKey) => (

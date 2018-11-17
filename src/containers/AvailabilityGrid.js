@@ -3,7 +3,7 @@ import AvailabilityGrid from '../components/AvailabilityGrid'
 
 const mapStateToProps = (state, ownProps) => ({
   shops: state.shops,
-  partNumbers: state.partNumbers
+  products: state.partNumbers
 })
 
 export default connect(mapStateToProps)(AvailabilityGrid)
