@@ -4,18 +4,6 @@ import {
   FETCH_FAILURE,
 } from '../constants/ActionTypes'
 
-// const initialState = {
-//   'R428': {
-//     storeName: 'ifc mall'
-//   },
-//   'R499': {
-//     storeName: 'Canton Road'
-//   },
-//   'R409': {
-//     storeName: 'Causeway Bay'
-//   }
-// }
-
 export default function shops (state = {}, action) {
   switch (action.type) {
     case FETCH_SUCCESS:
