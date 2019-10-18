@@ -31,11 +31,9 @@ export default function partNumbers(state = {}, action) {
             model2,
             storage,
             color,
-          } = matches.groups
+          } = matches.groups;
 
-          if (availability.pickupDisplay !== "available") {
-            console.log(availability.pickupDisplay);
-          }
+          
 
           let row;
           switch (product) {
